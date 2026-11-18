@@ -4,8 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Peli</title>
-    <script src="pelikoodi.js"></script>
     <link rel="stylesheet" href="pelidesign.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.css"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.js"
+        }
+      }
+    </script>
   </head>
-  <body></body>
+  <body>
+    <div>
+      <!--TODO: siirtää css tiedostoon-->
+      <div
+        id="map"
+        style="position: absolute; width: 100vw; height: 100vh"
+      ></div>
+    </div>
+    <!--leafletin käyttö vaatii "module" typen käyttöä (eli import export jne toimivat vain tämän kanssa)-->
+    <script type="module" src="pelikoodi.js"></script>
+  </body>
 </html>
