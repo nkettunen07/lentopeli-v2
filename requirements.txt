@@ -1,0 +1,4 @@
+flask
+dotenv
+mysql
+mysql-connector
