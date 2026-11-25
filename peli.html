@@ -19,14 +19,52 @@
   </head>
   <body>
     <div>
-      <!--TODO: siirtää css tiedostoon-->
+      <!--TODO: siirtää stylet css tiedostoon-->
       <div
         id="map"
         style="position: absolute; width: 100vw; height: 100vh"
       ></div>
-      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; display: flex; justify-content: center; align-items:center;">
-        <div>
+      <!--tavaraa keskellä ruutua kuten mainmenu, asetukset jne-->
+      <!--TODO: siirtää stylet css tiedostoon-->
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div id="alotusnäyttö">
           <div>lentopeli</div>
+          <button id="btn1">Aloitapeli</button>
+          <button id="btn2">Vaikeustaso</button>
+          <button id="btn3">Asetukset</button>
+        </div>
+        <div id="Asetukset">
+          <div>lentopeli</div>
+          <button id="btn1">Takaisin</button>
+          <button id="btn2">Ääni</button>
+        </div>
+        <div id="Vaikeustaso">
+          <div>lentopeli</div>
+          <button id="btn1">Helppo</button>
+          <button id="btn2">Vaikea</button>
+        </div>
+      </div>
+      <!--tavaraa alhaalla ruutua kuten kysymykset jne-->
+      <div id="kysmys">
+        <div id="kysymykset">
+          <div>lentopeli</div>
+          <button id="btn1"></button>
+          <button id="btn2"></button>
+          <button id="btn3"></button>
+          <button id="btn4"></button>
         </div>
       </div>
     </div>
