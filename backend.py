@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 import os
 from dotenv import load_dotenv
 import mysql.connector
@@ -33,6 +34,7 @@ def fetchall(query, params=()):
 
 
 app = Flask(__name__)
+CORS(app, origins="*")
 @app.route('/airports')
 def airports():
     result = fetchall("""
@@ -44,5 +46,47 @@ def airports():
             "error": "Not foundia"
         }
     return result
+@app.route('/airport/<icao>')
+def airport(icao):
+    result = fetchone("""
+        SELECT *
+        FROM airport WHERE ident = %s
+    """, (icao,))
+    if result == None:
+        return {
+            "error": "Not foundia"
+        }
+    return {
+        "id": result[0],
+        "ident": result[1],
+        "type": result[2],
+        "name": result[3],
+        "latitude_deg": result[4],
+        "longitude_deg": result[5],
+        "elevation_ft": result[6],
+        "contitent": result[7],
+        "iso_country": result[8],
+        "municipality": result[9],
+        "scheduled_service": result[10],
+        "gps_code": result[11],
+        "iata_code": result[12],
+        "local_code": result[13],
+        "home_link": result[14],
+        "wikipedia_link": result[15],
+        "keywords": result[16]
+    }
+@app.route('/starter')
+def starter():
+    # periaatteessa voisi hardcodee suoraan pelikoodiin, mutta tää on sillee helpompaa 
+    # koska voi vaa päivittää näitä ja kaikki (jopa vanhat versiot) saa nää uudet
+    starterairports = [
+        "FSIA", #Seychelles International Airport
+        "OMDB", #Dubai International Airport
+        "EDDB", #Berlin Brandenburg Airport
+        "KMIA", #Miami International Airport
+        "SKBO", #El Dorado International Airport
+        "YMML" #Melbourne International Airport
+        ]
+    return starterairports
 
 app.run(use_reloader=True, host='127.0.0.1', port=3000)
