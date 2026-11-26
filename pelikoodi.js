@@ -51,12 +51,14 @@ async function alotuskenttä() {
     alert(e);
   }
 }
+let starterairport;
 function aloitapeli(airport) {
   alotusnäyttö.style.display = "none";
   asetukset.style.display = "none";
   vaikeustasomenu.style.display = "none";
   valitsealoituslentokenttä.style.display = "none";
   console.log(airport);
+  starterairport = airport;
 }
 document
   .querySelector("#alotusnäyttö #btn1")
