@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 import os
 from dotenv import load_dotenv
 import mysql.connector
@@ -33,6 +34,7 @@ def fetchall(query, params=()):
 
 
 app = Flask(__name__)
+CORS(app, origins="*")
 @app.route('/airports')
 def airports():
     result = fetchall("""

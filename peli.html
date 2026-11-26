@@ -24,50 +24,39 @@
         id="map"
         style="position: absolute; width: 100vw; height: 100vh"
       ></div>
+
       <!--tavaraa keskellä ruutua kuten mainmenu, asetukset jne-->
-      <!--TODO: siirtää stylet css tiedostoon-->
-      <div
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100vw;
-          height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        "
-      >
-        <div id="alotusnäyttö">
-          <div>lentopeli</div>
-          <button id="btn1">Aloitapeli</button>
-          <button id="btn2">Vaikeustaso</button>
-          <button id="btn3">Asetukset</button>
-        </div>
-        <div id="Asetukset">
-          <div>lentopeli</div>
-          <button id="btn1">Takaisin</button>
-          <button id="btn2">Ääni</button>
-        </div>
-        <div id="Vaikeustaso">
-          <div>lentopeli</div>
-          <button id="btn1">Helppo</button>
-          <button id="btn2">Vaikea</button>
-        </div>
+      <div id="alotusnäyttö" class="keskellä">
+        <h1>lentopeli</h1>
+        <button id="btn1">Aloitapeli</button>
+        <button id="btn2">Vaikeustaso</button>
+        <button id="btn3">Asetukset</button>
       </div>
+      <div id="valitsealoituslentokenttä" class="keskellä">
+        <h1>valitse aloitus lentokenttä</h1>
+        <div id="kentät">Ladataan...</div>
+      </div>
+      <div id="Asetukset" class="keskellä">
+        <h1>Asetukset</h1>
+        <button id="btn1">Takaisin</button>
+        <button id="btn2">Ääni</button>
+      </div>
+      <div id="Vaikeustaso" class="keskellä">
+        <h1>Vaikeustaso</h1>
+        <button id="btn1">Helppo</button>
+        <button id="btn2">Vaikea</button>
+      </div>
+
       <!--tavaraa alhaalla ruutua kuten kysymykset jne-->
-      <div id="kysmys">
-        <div id="kysymykset">
-          <div>lentopeli</div>
-          <button id="btn1"></button>
-          <button id="btn2"></button>
-          <button id="btn3"></button>
-          <button id="btn4"></button>
-        </div>
+      <div id="kysymykset" class="kysymys">
+        <h1>lentopeli</h1>
+        <button id="btn1"></button>
+        <button id="btn2"></button>
+        <button id="btn3"></button>
+        <button id="btn4"></button>
       </div>
     </div>
+
     <!--leafletin käyttö vaatii "module" typen käyttöä (eli import export jne toimivat vain tämän kanssa)-->
     <script type="module" src="pelikoodi.js"></script>
   </body>
